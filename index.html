@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Atlas Digital Creative is an independent creative studio specializing in brand identity, social content, and marketing materials."
+  >
+
+  <title>Atlas Digital Creative | Brand & Graphic Design</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --ink: #f4f3ef;
+      --paper: #0a0a0a;
+      --muted: #989898;
+      --line: #2a2a2a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      font-weight: 300;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+    }
+
+    .shell {
+      width: min(1420px, calc(100% - 80px));
+      margin-inline: auto;
+    }
+
+    .nav {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 5;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 12px;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border: 1px solid #555;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: "Instrument Serif", serif;
+      font-size: 18px;
+    }
+
+    .nav nav {
+      display: flex;
+      gap: 34px;
+      color: #aaa;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+    }
+
+    .nav nav a:hover {
+      color: #fff;
+    }
+
+    .pill {
+      border: 1px solid #4a4a4a;
+      border-radius: 999px;
+      padding: 14px 22px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      display: inline-flex;
+      align-items: center;
+      transition: 0.25s;
+    }
+
+    .pill:hover {
+      background: var(--ink);
+      color: #080808;
+    }
+
+    .pill.small {
+      padding: 11px 18px;
+    }
+
+    .hero {
+      min-height: calc(100vh - 88px);
+      padding: 10vh 0 42px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .eyebrow {
+      color: #999;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .eyebrow span {
+      width: 32px;
+      height: 1px;
+      background: #777;
+    }
+
+    h1,
+    h2 {
+      font-family: "Instrument Serif", serif;
+      font-weight: 400;
+      margin: 0;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 8.6vw, 9rem);
+      line-height: 0.89;
+      margin-top: 6vh;
+    }
+
+    em {
+      font-weight: 400;
+      color: #a7a7a7;
+    }
+
+    .hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-top: auto;
+      padding-top: 60px;
+    }
+
+    .hero-bottom p {
+      max-width: 510px;
+      color: #a8a8a8;
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 60px;
+      border-top: 1px solid var(--line);
+      padding-top: 28px;
+    }
+
+    .numbers div {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .numbers strong {
+      font-family: "Instrument Serif", serif;
+      font-size: 40px;
+      font-weight: 400;
+    }
+
+    .numbers span {
+      color: #777;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+    }
+
+    .work,
+    .services,
+    .about,
+    .contact {
+      padding-block: 140px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      align-items: end;
+      margin-bottom: 70px;
+    }
+
+    .section-head > p:first-child,
+    .contact > p:first-child,
+    .about-label {
+      color: #777;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      align-self: start;
+    }
+
+    .section-head h2,
+    .about h2,
+    .contact h2 {
+      font-size: clamp(3.2rem, 6.2vw, 6.7rem);
+      line-height: 0.95;
+    }
+
+    .section-copy {
+      color: #999;
+      line-height: 1.7;
+      max-width: 360px;
+      margin: 0 0 4px 30px;
+    }
+
+    .project-collage {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows:
+        repeat(4, clamp(180px, 17vw, 245px))
+        clamp(320px, 32vw, 460px);
+      gap: 10px;
+      position: relative;
+    }
+
+    .project {
+      position: relative;
+      min-width: 0;
+    }
+
+    .project-image {
+      background: #f4f3ef;
+      overflow: hidden;
+      height: 100%;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .project img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    .project:hover img {
+      transform: scale(1.025);
+    }
+
+    .collage-one {
+      grid-column: 1 / 7;
+      grid-row: 1;
+    }
+
+    .collage-two {
+      grid-column: 7 / 10;
+      grid-row: 1;
+    }
+
+    .collage-three {
+      grid-column: 10 / 13;
+      grid-row: 1;
+    }
+
+    .collage-four {
+      grid-column: 1 / 4;
+      grid-row: 2;
+    }
+
+    .collage-five {
+      grid-column: 4 / 9;
+      grid-row: 2;
+    }
+
+    .collage-six {
+      grid-column: 9 / 13;
+      grid-row: 2;
+    }
+
+    .collage-seven {
+      grid-column: 1 / 6;
+      grid-row: 3;
+    }
+
+    .collage-eight {
+      grid-column: 6 / 9;
+      grid-row: 3;
+    }
+
+    .collage-nine {
+      grid-column: 9 / 13;
+      grid-row: 3;
+    }
+
+    .collage-ten {
+      grid-column: 1 / 7;
+      grid-row: 4;
+    }
+
+    .collage-ten .project-image {
+      background: #090909;
+    }
+
+    .collage-fourteen {
+      grid-column: 7 / 13;
+      grid-row: 4;
+    }
+
+    .collage-eleven {
+      grid-column: 1 / 4;
+      grid-row: 5;
+    }
+
+    .collage-twelve {
+      grid-column: 4 / 7;
+      grid-row: 5;
+    }
+
+    .collage-thirteen {
+      grid-column: 7 / 13;
+      grid-row: 5;
+    }
+
+    .project-note {
+      color: #666;
+      font-size: 10px;
+      line-height: 1.6;
+      letter-spacing: 0.08em;
+      margin: 22px 0 0 auto;
+      max-width: 560px;
+      text-align: right;
+    }
+
+    .section-head.compact {
+      grid-template-columns: 1fr 3fr;
+    }
+
+    .service-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .service-list article {
+      display: grid;
+      grid-template-columns: 1fr 2fr 2fr;
+      padding: 42px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .service-list span {
+      color: #666;
+      font-size: 11px;
+    }
+
+    .service-list h3 {
+      font-family: "Instrument Serif", serif;
+      font-size: 38px;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .service-list p {
+      color: #999;
+      line-height: 1.7;
+      max-width: 460px;
+      margin: 0;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+
+    .about > div:last-child {
+      max-width: 1000px;
+    }
+
+    .about p {
+      color: #aaa;
+      font-size: 20px;
+      line-height: 1.75;
+      max-width: 820px;
+      margin: 50px 0;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .about-tags span {
+      padding: 10px 14px;
+      border: 1px solid #333;
+      border-radius: 999px;
+      color: #999;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .contact {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact h2 {
+      margin-top: 36px;
+    }
+
+    .contact-copy {
+      color: #999;
+      font-size: 18px;
+      margin: 45px 0 55px;
+    }
+
+    .contact-link {
+      font-family: "Instrument Serif", serif;
+      font-size: clamp(1.7rem, 4vw, 4rem);
+      border-bottom: 1px solid #555;
+      padding-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      transition: 0.25s;
+    }
+
+    .contact-link:hover {
+      color: #aaa;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding-block: 34px;
+      display: flex;
+      justify-content: space-between;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 10px;
+    }
+
+    @media (max-width: 800px) {
+      .shell {
+        width: min(100% - 36px, 1420px);
+      }
+
+      .nav nav {
+        display: none;
+      }
+
+      .brand-name {
+        display: none;
+      }
+
+      .hero {
+        min-height: 720px;
+        padding-top: 90px;
+      }
+
+      h1 {
+        font-size: clamp(3.7rem, 17vw, 6rem);
+      }
+
+      .hero-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .numbers {
+        gap: 15px;
+      }
+
+      .numbers strong {
+        font-size: 32px;
+      }
+
+      .work,
+      .services,
+      .about,
+      .contact {
+        padding-block: 90px;
+      }
+
+      .section-head,
+      .section-head.compact,
+      .about {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .section-copy {
+        margin: 0;
+      }
+
+      .project-collage {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+      }
+
+      .project {
+        height: auto;
+      }
+
+      .project-image {
+        height: auto;
+        aspect-ratio: 4 / 3;
+      }
+
+      .collage-two .project-image,
+      .collage-three .project-image,
+      .collage-four .project-image,
+      .collage-six .project-image,
+      .collage-eight .project-image {
+        aspect-ratio: 1 / 1;
+      }
+
+      .project-note {
+        text-align: left;
+        margin-left: 0;
+      }
+
+      .service-list article {
+        grid-template-columns: 35px 1fr;
+        gap: 12px;
+      }
+
+      .service-list p {
+        grid-column: 2;
+      }
+
+      .about p {
+        font-size: 17px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .project img {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header class="nav shell">
+      <a
+        class="brand"
+        href="#top"
+        aria-label="Atlas Digital Creative home"
+      >
+        <span class="brand-mark">A</span>
+        <span class="brand-name">Atlas Digital Creative</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <a class="pill small" href="#contact">
+        Start a project ↗
+      </a>
+    </header>
+
+    <section class="hero shell" id="top">
+      <div class="eyebrow">
+        <span></span>
+        Independent creative studio · Est. 2023
+      </div>
+
+      <h1>
+        Visuals that make<br>
+        your brand <em>impossible</em><br>
+        to overlook.
+      </h1>
+
+      <div class="hero-bottom">
+        <p>
+          Brand identities, social content, and marketing materials
+          designed with clarity, personality, and purpose.
+        </p>
+
+        <a class="pill" href="#work">
+          Explore selected work ↓
+        </a>
+      </div>
+
+      <div class="numbers">
+        <div>
+          <strong>4</strong>
+          <span>Years of experience</span>
+        </div>
+
+        <div>
+          <strong>03</strong>
+          <span>Core disciplines</span>
+        </div>
+
+        <div>
+          <strong>∞</strong>
+          <span>Ideas worth making</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="work shell" id="work">
+      <div class="section-head">
+        <p>(01) Selected work</p>
+
+        <h2>
+          Different brands.<br>
+          <em>Distinct voices.</em>
+        </h2>
+
+        <p class="section-copy">
+          Identity systems, client campaigns, and campus creative built
+          across logos, social graphics, event materials, and print.
+        </p>
+      </div>
+
+      <div class="project-collage">
+        <article class="project collage-one">
+          <div class="project-image">
+            <img
+              src="work/concept/confetti-wordmark.png"
+              alt="Confetti wordmark design project"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-two">
+          <div class="project-image">
+            <img
+              src="work/concept/smith-greenwell-symbol.png"
+              alt="Smith Greenwell symbol design project"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-three">
+          <div class="project-image">
+            <img
+              src="work/concept/sab-combination.png"
+              alt="Sab Photography combination mark"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-four">
+          <div class="project-image">
+            <img
+              src="work/concept/confetti-abstract.png"
+              alt="Confetti abstract mark"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-five">
+          <div class="project-image">
+            <img
+              src="work/concept/smith-greenwell-wordmark.png"
+              alt="Smith Greenwell wordmark"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-six">
+          <div class="project-image">
+            <img
+              src="work/concept/sab-symbol.png"
+              alt="Sab Photography symbol"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-seven">
+          <div class="project-image">
+            <img
+              src="work/concept/confetti-combination.png"
+              alt="Confetti combination mark"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-eight">
+          <div class="project-image">
+            <img
+              src="work/concept/smith-greenwell-emblem.png"
+              alt="Smith Greenwell emblem"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-nine">
+          <div class="project-image">
+            <img
+              src="work/concept/sab-wordmark.png"
+              alt="Sab Photography wordmark"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-ten">
+          <div class="project-image">
+            <img
+              src="work/featured/yorkshire-logo.png"
+              alt="Yorkshire Prize Club logo"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-eleven">
+          <div class="project-image">
+            <img
+              src="work/featured/vpoc-student-council.jpg"
+              alt="VPOC Student Council design"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-twelve">
+          <div class="project-image">
+            <img
+              src="work/featured/goc-colors-day.png"
+              alt="GOC Rep Your Colors Day flyer"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-thirteen">
+          <div class="project-image">
+            <img
+              src="work/featured/goc-student-council.png"
+              alt="Gwinnett Online Campus Student Council logo"
+            >
+          </div>
+        </article>
+
+        <article class="project collage-fourteen">
+          <div class="project-image">
+            <img
+              src="work/featured/yorkshire-cheque.png"
+              alt="Yorkshire Prize Club winner cheque"
+            >
+          </div>
+        </article>
+      </div>
+
+      <p class="project-note">
+        Confetti, Smith Greenwell Real Estate, and Sab Photography are
+        fictional concept brands created for an academic design project.
+        Additional work includes client and campus projects.
+      </p>
+    </section>
+
+    <section class="services shell" id="services">
+      <div class="section-head compact">
+        <p>(02) Services</p>
+
+        <h2>
+          Built around what<br>
+          your business <em>needs.</em>
+        </h2>
+      </div>
+
+      <div class="service-list">
+        <article>
+          <span>01</span>
+
+          <h3>Brand Identity</h3>
+
+          <p>
+            Logos, visual direction, color systems, typography, and the
+            pieces that make a brand feel cohesive.
+          </p>
+        </article>
+
+        <article>
+          <span>02</span>
+
+          <h3>Social &amp; Digital</h3>
+
+          <p>
+            Campaign graphics, carousels, reels, winner announcements,
+            and content made to stop the scroll.
+          </p>
+        </article>
+
+        <article>
+          <span>03</span>
+
+          <h3>Marketing Materials</h3>
+
+          <p>
+            Flyers, posters, menus, price lists, business cards, and
+            custom print ready designs.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about shell" id="about">
+      <div class="about-label">
+        (03) The studio
+      </div>
+
+      <div>
+        <h2>
+          Small studio energy.<br>
+          <em>Big brand intention.</em>
+        </h2>
+
+        <p>
+          Atlas Digital Creative is an independent design studio helping
+          businesses turn ideas into clear, memorable visuals. Every
+          project is custom built around the brand, the audience, and the
+          actual goal. No recycled identities. No one size fits all
+          creative.
+        </p>
+
+        <div class="about-tags">
+          <span>Est. 2023</span>
+          <span>4 years experience</span>
+          <span>Based in Georgia</span>
+          <span>Working worldwide</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact shell" id="contact">
+      <p>(04) New projects</p>
+
+      <h2>
+        Have something in mind?<br>
+        <em>Let’s make it real.</em>
+      </h2>
+
+      <p class="contact-copy">
+        Tell me what you need, your timeline, and the vision. I’ll help
+        shape the rest.
+      </p>
+
+      <a
+        class="contact-link"
+        href="mailto:atlasdigitalcreatives0@gmail.com"
+      >
+        atlasdigitalcreatives0@gmail.com
+        <span>↗</span>
+      </a>
+    </section>
+
+    <footer class="shell">
+      <span>© 2026 Atlas Digital Creative</span>
+      <span>Independent design studio · Est. 2023</span>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </main>
+</body>
+</html>
