@@ -1,57 +1,68 @@
-# atlasdigitalcreatives
+# Atlas Digital Creative
 
-This folder contains the complete editable source for the Atlas Digital Creative portfolio website.
+Portfolio website for **Atlas Digital Creative**, an independent graphic design studio established in 2023.
 
-## Where to edit
+## Live website
 
-- `app/page.tsx` contains the visible website text and the portfolio project list.
-- `app/globals.css` contains the layout, colors, typography, collage, and mobile styling.
-- `public/work/` contains every portfolio image used by the website.
-- `app/layout.tsx` contains the browser title and page metadata.
+This website is hosted using GitHub Pages.
 
-## Open the project
+## Website files
 
-1. Install Node.js 22.13 or newer from https://nodejs.org.
-2. Open this folder in VS Code or Cursor.
-3. Open the terminal inside the folder.
-4. Run `npm install`.
-5. Run `npm run dev`.
-6. Open the local address shown in the terminal.
-
-## Change text
-
-Open `app/page.tsx`, find the sentence you want to change, edit the text between the tags, and save the file.
-
-For example:
-
-```tsx
-<p>Brand identities, social content, and marketing materials...</p>
+```text
+index.html
+public/
+  work/
+    concept/
+    featured/
+README.md
 ```
 
-## Replace a portfolio image
+The complete website layout and styling are contained inside `index.html`.
 
-1. Put the new image inside `public/work/featured/`.
-2. Open `app/page.tsx`.
-3. Change the matching `src` value in the `projects` list near the top of the file.
+Portfolio images are stored inside `public/work/`.
 
-Example:
+## Preview the website
 
-```tsx
-{ src: "/work/featured/new-design.png", title: "New design", className: "collage-ten" }
+### GitHub Pages
+
+1. Open the repository settings.
+2. Select **Pages**.
+3. Set the source to **Deploy from a branch**.
+4. Select the `main` branch.
+5. Select `/ (root)`.
+6. Save and wait for GitHub to publish the website.
+
+### Preview locally
+
+Download the repository, unzip it, and double click `index.html` to open the website in a browser.
+
+## Edit website text
+
+Open `index.html`, locate the text you want to change, edit it, and commit the changes.
+
+## Add a portfolio image
+
+1. Open `public/work/featured/`.
+2. Upload the new PNG or JPG file.
+3. Use a simple lowercase filename without spaces, such as `client-logo.png`.
+4. Open `index.html`.
+5. Add a new project block inside the portfolio collage:
+
+```html
+<article class="project">
+  <div class="project-image">
+    <img
+      src="public/work/featured/client-logo.png"
+      alt="Client logo design"
+    >
+  </div>
+</article>
 ```
 
-File names should use lowercase letters and hyphens. Avoid spaces when possible.
+The filename written in `src` must exactly match the uploaded image filename.
 
-## Publish with GitHub and Vercel
+## Contact
 
-1. Create a new empty repository on GitHub.
-2. Upload this folder to the repository.
-3. Sign in to https://vercel.com with GitHub.
-4. Select **Add New Project** and import the repository.
-5. Leave the detected build settings unchanged and select **Deploy**.
+Email: [atlasdigitalcreatives0@gmail.com](mailto:atlasdigitalcreatives0@gmail.com)
 
-Afterward, each change pushed to the main GitHub branch will automatically update the Vercel website.
-
-## Contact email currently used
-
-`atlasdigitalcreatives0@gmail.com`
+© 2026 Atlas Digital Creative
